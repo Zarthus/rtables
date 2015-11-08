@@ -1,4 +1,7 @@
 # Ruby Tables
+[![Build Status](https://travis-ci.org/Zarthus/rtables.svg?branch=master)](https://travis-ci.org/Zarthus/rtables)
+[![Code Climate](https://codeclimate.com/github/Zarthus/rtables/badges/gpa.svg)](https://codeclimate.com/github/Zarthus/rtables)
+[![Test Coverage](https://codeclimate.com/github/Zarthus/rtables/badges/coverage.svg)](https://codeclimate.com/github/Zarthus/rtables/coverage)
 
 RTables (Ruby Tables) is a small library that helps you generate table output in various predefined formats.
 
