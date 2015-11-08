@@ -3,3 +3,6 @@
 
 # Gem releases
 *.gem
+
+# CI / Coverage
+coverage
