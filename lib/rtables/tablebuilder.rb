@@ -34,7 +34,7 @@ module RTables
     end
 
     def raise_if_empty
-      fail TableFormatError, 'Table has no content to display.' if empty?
+      fail TableFormatError, 'Table has no content to display.' if empty? || @columns == 0 || @rows == 0
     end
 
     def empty?
