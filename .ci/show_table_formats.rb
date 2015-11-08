@@ -15,10 +15,10 @@ def populate_table(table)
 end
 
 tables = {
-  'Plain Table': RTables::Table::PlainTable.new,
-  'Simple Table': RTables::Table::SimpleTable.new,
-  'Monospace Table': RTables::Table::MonoTable.new,
-  'Unicode Monospace Table': RTables::Table::UnicodeMonoTable.new
+  'Plain Table' => RTables::Table::PlainTable.new,
+  'Simple Table' => RTables::Table::SimpleTable.new,
+  'Monospace Table' => RTables::Table::MonoTable.new,
+  'Unicode Monospace Table' => RTables::Table::UnicodeMonoTable.new
 }
 
 tables.each do |name, table|
