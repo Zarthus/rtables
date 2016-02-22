@@ -18,6 +18,7 @@ tables = {
   'Plain Table' => RTables::Table::PlainTable.new,
   'Simple Table' => RTables::Table::SimpleTable.new,
   'Monospace Table' => RTables::Table::MonoTable.new,
+  'Monospace Alternative Table' => RTables::Table::MonoTableAlt.new,
   'Unicode Monospace Table' => RTables::Table::UnicodeMonoTable.new
 }
 

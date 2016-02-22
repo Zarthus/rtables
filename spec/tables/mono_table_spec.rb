@@ -1,7 +1,7 @@
 require_relative '../spec_helper'
 
 describe RTables::Table::MonoTable do
-  it 'should match the length of our expectaction based on a single column we inject' do
+  it 'should match the length of our expectation based on a single column we inject' do
     table = RTables::Table::MonoTable.new
 
     column_name = '13 characters'
