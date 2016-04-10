@@ -39,13 +39,6 @@ module RTables
 
         table << rowsep_tpl
 
-        # +-----------------------+
-        # | row 1 | row 2 | row 3 |
-        # |-------+-------+-------|
-        # | smth  | smth2 | smth4 |
-        # | smt   | kk    | ok    |
-        # +-----------------------+
-
         table
       end
 
