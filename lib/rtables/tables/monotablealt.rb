@@ -13,8 +13,8 @@ module RTables
         end
 
         table = []
-        rowsep_tpl = "#{corner}#{line_horizontal * (column_size * @table_header.length - 4)}#{corner}"
         rowsep_item_tpl = "#{corner}#{((line_horizontal * (column_size - 2)) << corner) * @table_header.length}"
+        rowsep_tpl = "#{corner}#{line_horizontal * (rowsep_item_tpl.length - 2)}#{corner}"
         item_tpl = "#{line_vertical} %s "
 
         table << rowsep_tpl
@@ -37,7 +37,7 @@ module RTables
           table << item
         end
 
-        table << rowsep_item_tpl
+        table << rowsep_tpl
 
         # +-----------------------+
         # | row 1 | row 2 | row 3 |
