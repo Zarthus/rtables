@@ -63,9 +63,7 @@ describe RTables::Table::MonoTableAlt do
     tbl_matches = 0
 
     render.each do |table_item|
-        if table_item =~ /\.\./
-            tbl_matches += 1
-        end
+      tbl_matches += 1 if table_item =~ /\.\./
     end
 
     expect(tbl_matches).to eq(2)

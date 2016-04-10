@@ -35,7 +35,7 @@ module RTables
 
         item = ''
         @table_header.each do |col|
-            item << pad(item_fmt % col, column_size - 3)
+          item << pad(item_fmt % col, column_size - 3)
         end
         item << line_vertical
         table << item
