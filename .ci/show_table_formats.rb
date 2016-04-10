@@ -19,7 +19,8 @@ tables = {
   'Simple Table' => RTables::Table::SimpleTable.new,
   'Monospace Table' => RTables::Table::MonoTable.new,
   'Monospace Alternative Table' => RTables::Table::MonoTableAlt.new,
-  'Unicode Monospace Table' => RTables::Table::UnicodeMonoTable.new
+  'Unicode Monospace Table' => RTables::Table::UnicodeMonoTable.new,
+  'Unicode Monospace Alternative Table' => RTables::Table::UnicodeMonoTableAlt.new
 }
 
 tables.each do |name, table|
