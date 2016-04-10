@@ -1,8 +1,8 @@
 require_relative '../spec_helper'
 
-describe RTables::Table::MonoTableAlt do
+describe RTables::Table::UnicodeMonoTableAlt do
   it 'should dynamically determine how much space one table can have (small amount of columns)' do
-    table = RTables::Table::MonoTableAlt.new
+    table = RTables::Table::UnicodeMonoTableAlt.new
 
     table.add_column('foo')
     table.add_column('bar')
@@ -17,7 +17,7 @@ describe RTables::Table::MonoTableAlt do
   end
 
   it 'should always have the same table length for each row' do
-    table = RTables::Table::MonoTableAlt.new
+    table = RTables::Table::UnicodeMonoTableAlt.new
 
     table.add_column('foo')
     table.add_column('bar')
@@ -35,7 +35,7 @@ describe RTables::Table::MonoTableAlt do
   end
 
   it 'should always have the same table length for each row when column sizes differ in size' do
-    table = RTables::Table::MonoTableAlt.new
+    table = RTables::Table::UnicodeMonoTableAlt.new
 
     table.add_column('xyz')
     table.add_column('QwertyUiop')
@@ -54,7 +54,7 @@ describe RTables::Table::MonoTableAlt do
   end
 
   it 'should truncate long strings' do
-    table = RTables::Table::MonoTableAlt.new
+    table = RTables::Table::UnicodeMonoTableAlt.new
 
     table.add_column('An extremely, unnecessarily, unimaginably long table column name.')
     table.add_row('Similarily, we are going to do the same for the table row content!')
@@ -70,7 +70,7 @@ describe RTables::Table::MonoTableAlt do
   end
 
   it 'may only include the separators and the content we provide' do
-    table = RTables::Table::MonoTableAlt.new
+    table = RTables::Table::UnicodeMonoTableAlt.new
 
     table.add_column('a')
     table.add_column('aa')
@@ -80,12 +80,12 @@ describe RTables::Table::MonoTableAlt do
 
     render = table.render
     render.each do |table_item|
-      expect(table_item).to match(/^[+\-\|a ]+$/)
+      expect(table_item).to match(/^(?:[^\w]|a)+$/)
     end
   end
 
   it 'should have the number of lines of our expectaction based on the values we inject' do
-    table = RTables::Table::MonoTableAlt.new
+    table = RTables::Table::UnicodeMonoTableAlt.new
 
     table.add_column('test')
     table.add_row('test')
