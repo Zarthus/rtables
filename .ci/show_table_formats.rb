@@ -2,7 +2,7 @@
 
 require_relative '../lib/rtables'
 
-def populate_table(table)
+def populate_large_table(table)
   table.add_column('Name')
   table.add_column('Occupation')
   table.add_column('Voice Actor')
@@ -14,15 +14,30 @@ def populate_table(table)
   table
 end
 
+def populate_small_table(table)
+  table.add_column('Key')
+  table.add_column('Value')
+
+  table.add_row('Date', Time.now.utc.to_s.split(' ').first)
+  table.add_row('Time', Time.now.utc.to_s.split(' ')[1])
+  table.add_row('Timezone', Time.now.utc.to_s.split(' ').last)
+
+  table
+end
+
+
 tables = {
-  'Plain Table' => RTables::Table::PlainTable.new,
-  'Simple Table' => RTables::Table::SimpleTable.new,
-  'Monospace Table' => RTables::Table::MonoTable.new,
-  'Monospace Alternative Table' => RTables::Table::MonoTableAlt.new,
-  'Unicode Monospace Table' => RTables::Table::UnicodeMonoTable.new,
-  'Unicode Monospace Alternative Table' => RTables::Table::UnicodeMonoTableAlt.new
+  'Plain Table' => RTables::Table::PlainTable,
+  'Simple Table' => RTables::Table::SimpleTable,
+  'Monospace Table' => RTables::Table::MonoTable,
+  'Monospace Alternative Table' => RTables::Table::MonoTableAlt,
+  'Unicode Monospace Table' => RTables::Table::UnicodeMonoTable,
+  'Unicode Monospace Alternative Table' => RTables::Table::UnicodeMonoTableAlt
 }
 
 tables.each do |name, table|
-  puts name, populate_table(table).to_s, "\n"
+  t1, t2 = table.new, table.new
+
+  puts "Large: #{name}", populate_large_table(t1).to_s, "\n"
+  puts "Small: #{name}", populate_small_table(t2).to_s, "\n\n"
 end

@@ -24,9 +24,12 @@ module RTables
         end
 
         row_sep_base = "#{(line_horizontal * (column_size - 2))}%{tchar}" * (@table_header.length)
-        row_sep_top = "#{CORNER_POS_LTOP}#{row_sep_base % { tchar: CORNER_POS_MTOP }}#{CORNER_POS_RTOP}"
-        row_sep_mid = "#{CORNER_POS_LMID}#{row_sep_base % { tchar: CORNER_POS_MMID }}#{CORNER_POS_RMID}"
-        row_sep_bot = "#{CORNER_POS_LBOT}#{row_sep_base % { tchar: CORNER_POS_MBOT }}#{CORNER_POS_RBOT}"
+
+        # This needs to be smaller because without, we get one character added too many.
+        row_sep_base_small = row_sep_base[0..row_sep_base.length-9]
+        row_sep_top = "#{CORNER_POS_LTOP}#{row_sep_base_small % { tchar: CORNER_POS_MTOP }}#{CORNER_POS_RTOP}"
+        row_sep_mid = "#{CORNER_POS_LMID}#{row_sep_base_small % { tchar: CORNER_POS_MMID }}#{CORNER_POS_RMID}"
+        row_sep_bot = "#{CORNER_POS_LBOT}#{row_sep_base_small % { tchar: CORNER_POS_MBOT }}#{CORNER_POS_RBOT}"
 
         item_fmt = "#{line_vertical} %s"
         table = []
